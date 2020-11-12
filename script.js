@@ -1,106 +1,146 @@
-function reduireArray(array, size) {
-    if (array.length <= size) {
-    return [array];}
-    return [array.slice(0, size),
-   ...reduireArray(array.slice(size), size)];
-}
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("https://clever-roentgen-a7b6ea.netlify.app/GalleryRepo/images.json")
+        .then(function (response) {
+            return response.json();
 
-const dateTimeFormat = Intl.DateTimeFormat("fr");
+        }).then(function (res) {
+            console.log(res);
 
-function afficher(json){
-    const repos = json.map(j => ({
-    name: j.name,
-    description: j.description || "",
-    updated_at: j.updated_at
-    }));
-    const selections = reduireArray(repos, 3);
-    let html = "";
-    selections.forEach(selection => {
-    html += '<div class="columns">';
-    selection.forEach(repo => {
-        html += `
-        <div class="column">
-        <div class="card">
-        <div class="card-image">
-        <figure class="image is-4by3">
-        <img
-       
-       src="https://bulma.io/images/placeholders/1280x960.pn
-       g"
-        alt="Placeholder image"
-        />
-        </figure>
-        </div>
-        <div class="card-content">
-        <div class="media">
-        <div class="media-left">
-        <figure class="image is-48x48">
-        <img
-       
-       src="https://bulma.io/images/placeholders/96x96.png"
-        alt="Placeholder image"
-        />
-        </figure>
-        </div>
-       <div class="media-content">
-        <p class="title is4">${repo.name}</p>
-        <p class="subtitle is6">@Parcourir</p>
- </div>
- </div>
+            let images = res;
 
- <div class="content">
- ${repo.description}
- <br />
-Dernière mise à jour: <time
-datetime="${
- repo.updated_at
- }">${dateTimeFormat.format(new
-Date(repo.updated_at))}</time>
-</div>
- </div>
- </div>
- </div>`;
- });
- html += "</div>";
- });
- document.querySelector(".container").innerHTML =
-html;
-}
+            let div_main = document.getElementById("main");
 
-const json = [
+            let container = document.createElement("div");
+            container.classList.add("container", "mt-5", "mb-3");
+
+            let row = document.createElement("div");
+            row.classList.add("row");
+
+            images.forEach(function (image) {
+                let div_image = document.createElement("div");
+                div_image.classList.add("col-sm-6", "col-md-4", "col-lg-3", "p-2");
+
+                let img = document.createElement("img");
+                img.src = image.src;
+                img.alt = image.alt;
+                img.title = image.title;
+                img.classList.add("w-100", "on_hover_clickable");
+
+                div_image.appendChild(img);
+                row.appendChild(div_image);
+            });
+
+            container.appendChild(row);
+            div_main.appendChild(container);
+
+        }).catch(function (err) {
+            console.log(err);
+        });
+});
+
+
+/*let div_main = document.getElementById("main");
+
+let container = document.createElement("div");
+container.classList.add("container", "mt-5", "mb-3");
+
+let row = document.createElement("div");
+row.classList.add("row");
+
+let images = [
     {
-    name: "Image 1",
-    created_at: "2020-09-19T10:05:12Z",
-    updated_at: "2020-10-09T12:09:56Z",
+        src: "images/image1.jpg",
+        alt: "",
+        description: "",
     },
     {
-    name: "Image 2",
-    created_at: "2014-06-10T11:41:39Z",
-    updated_at: "2014-06-10T11:43:11Z",
+        src: "images/image2.jpg",
+        alt: "",
+        description: "",
     },
     {
-        name: "Image 3",
-       created_at: "2014-06-10T11:41:39Z",
-        updated_at: "2018-12-11T14:07:57Z",
-       description: "AngularJS directive for AsciiDoctor",
-        },
-       
-        {
-        name: "Image 4",
-        description: "AngularJS directive for AsciiDoctor",
-       created_at: "2014-06-10T11:41:39Z",
-        updated_at: "2014-11-25T16:57:27Z",
-        },
-{
- name: "Image 5",
- description: "CLI tool for Angular",
- created_at: "2018-10-08T10:58:58Z",
- updated_at: "2018-10-25T14:58:47Z",
- }
+        src: "images/image3.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image4.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image5.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image6.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image7.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image8.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image9.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image10.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image11.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image12.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image13.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image14.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image15.jpg",
+        alt: "",
+        description: "",
+    },
+    {
+        src: "images/image16.jpg",
+        alt: "",
+        description: "",
+    },
 ];
 
-document.addEventListener("DOMContentLoaded",
-function() {
- afficher(json)
+images.forEach(function (image) {
+    let div_image = document.createElement("div");
+    div_image.classList.add("col-sm-6", "col-md-4", "col-lg-3", "p-2");
+
+    let img = document.createElement("img");
+    img.src = image.src;
+    img.classList.add("w-100", "on_hover_clickable");
+
+    div_image.appendChild(img);
+    row.appendChild(div_image);
 });
-       
+
+container.appendChild(row);
+div_main.appendChild(container);*/
