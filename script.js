@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("https://clever-roentgen-a7b6ea.netlify.app/GalleryRepo/images.json")
+    fetch("https://quirky-kirch-74f858.netlify.app/GalleryRepo/images.json")
         .then(function (response) {
             return response.json();
 
