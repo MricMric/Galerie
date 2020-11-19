@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }).then(function (res) {
             console.log(res);
-            
-            if(navigator.online){
-                console.log("online");
-            };
+
+            console.log(navigator.onLine ? 'online' : 'offline')
 
             let images = res;
 
