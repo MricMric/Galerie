@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(function (res) {
             console.log(res);
 
-            console.log(navigator.onLine ? 'online' : 'offline')
+            window.addEventListener('online', function(e) {
+                console.log("ouais c online là");
+            })
+            
 
             let images = res;
 

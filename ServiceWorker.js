@@ -18,7 +18,6 @@ self.addEventListener('fetch',function(e){
 });*/
 
 
-console.log(navigator.onLine ? 'online' : 'offline')
 /*self.addEventListener('activate', function(event){
     event.waitUntil(…);
 });*/
