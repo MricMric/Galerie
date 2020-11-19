@@ -6,7 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(function (res) {
             console.log(res);
 
-            console.log(navigator.onLine ? 'online' : 'offline')
+            if (navigator.onLine) {
+                console.log("online");
+            } else {
+                console.log("offline");
+            }
+        
+            window.addEventListener("online", function (e) {
+                console.log("change online");
+            });
+        
+            window.addEventListener("offline", function (e) {
+                console.log("change offline");
+            });
             
 
             let images = res;
