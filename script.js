@@ -6,20 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(function (res) {
             console.log(res);
 
-            if (navigator.onLine) {
-                console.log("online");
-            } else {
-                console.log("offline");
-            }
-        
-            window.addEventListener("online", function (e) {
-                console.log("change online");
-            });
-        
-            window.addEventListener("offline", function (e) {
-                console.log("change offline");
-            });
-            
+                       
 
             let images = res;
 
@@ -51,7 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }).catch(function (err) {
             console.log(err);
         });
+        
+        if (navigator.onLine) {
+            console.log("online");
+        } else {
+            console.log("offline");
+        }
+    
+        window.addEventListener("online", function (e) {
+            console.log("change online");
+        });
+    
+        window.addEventListener("offline", function (e) {
+            console.log("change offline");
+        });
+
 });
+
 
 
 /*let div_main = document.getElementById("main");
