@@ -5,19 +5,21 @@ self.addEventListener('message', event => {
         });
 });
 
-self.addEventListener("fetch", event => {
-    console.log(event.request.url);});
-
-self.addEventListener("fetch", (event) => {const url = event.request.url;if (url.indexOf("https://monNomDeDomaine/images.json") ===0) {event.respondWith(fetch(event.request).then((response) => {if (response.statusText !== "OK") {console.error(
-    "Service Worker","Error when fetching",event.request.url);return response;}console.info("Formatting data");return response.json().then((json) => {const formattedResponse = json.map((j) => ({name: j.name,description: j.description || "",updated_at: j.updated_at,}));
-    return new Response(JSON.stringify(formattedResponse));});}));}});
-
-
-
-self.addEventListener('install', event => {
-    event.waitUntil(Promise.resolve('Install phase succeed'));
+self.addEventListener('install',function(event){
+    event.waitUntil(caches.open('nom_du_cache').then(cache=>{
+        Returncache.addAll(['/index.html','/style.css', 'script.js']);
+    })); 
 });
 
+self.addEventListener('fetch',function(e){
+    e.respondWith(caches.open('nom_du_cache').then(cache=>cache.match(e.request)).then(function (response){
+        return response || fetch(e.request);
+    })); 
+});
+
+if(navigator.online){
+    console.log("online");
+};
 
 /*self.addEventListener('activate', function(event){
     event.waitUntil(…);
