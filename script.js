@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(function (res) {
             console.log(res);
 
-            window.addEventListener('online', function(e) {
+            document.addEventListener('online', function(e) {
                 document.write("<h1>Ouais online !</h1>");
             })
             
