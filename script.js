@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             window.addEventListener('online', function(e) {
                 console.log("ouais c online là");
+                document.write("<B>"+ONLINE+"</B>");
             })
             
 
