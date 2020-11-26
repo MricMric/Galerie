@@ -22,15 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 let div_image = document.createElement("div");
                 div_image.classList.add("col-sm-6", "col-md-4", "col-lg-3", "p-2");
 
-                let button_image = document.createElement("button");
-                button_image.innerText.add("test");
-                button_image.classList.add("btn", "btn-warning");
+                /*let button_image = document.createElement("button");
+                button_image.classList.add("btn", "btn-warning");*/
 
                 let img = document.createElement("img");
                 img.src = image.src;
                 img.alt = image.alt;
                 img.title = image.title;
                 img.classList.add("w-100", "on_hover_clickable");
+
+                let div_fav = document.createElement("div");
+                div_fav.classList.add("p-1");
+
+                let span_fav = document.createElement("div");
+                span_fav.classList.add("fav-icon");
 
                 
                 div_image.appendChild(img);
