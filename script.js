@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 let span_fav = document.createElement("div");
                 span_fav.classList.add("fav-icon");
 
-                
+                div_fav.appendChild(span_fav);
                 div_image.appendChild(img);
-                div_image.appendChild(button_image);
+                div_image.appendChild(div_fav);
                 row.appendChild(div_image);
             });
 
