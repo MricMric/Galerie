@@ -22,13 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 let div_image = document.createElement("div");
                 div_image.classList.add("col-sm-6", "col-md-4", "col-lg-3", "p-2");
 
+                let button_image = document.createElement("button");
+                button_image.classList.add("btn", "btn-warning");
+
                 let img = document.createElement("img");
                 img.src = image.src;
                 img.alt = image.alt;
                 img.title = image.title;
                 img.classList.add("w-100", "on_hover_clickable");
 
+                
                 div_image.appendChild(img);
+                div_image.appendChild(button_image);
                 row.appendChild(div_image);
             });
 
