@@ -31,18 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 let div_fav = document.createElement("div");
                 div_fav.classList.add("p-1");
 
-                let span_fav = document.createElement("button");
+                let span_fav = document.createElement("i");
                 span_fav.id = "button"+i;
                 span_fav.classList.add("far", "fa-heart");
                 span_fav.addEventListener("click", function () {
-                    console.log(this.id + " est clické");
-                    span_fav.classList.add("fas", "fa-heart");
+
+                    if (span_fav.classList == "far fa-heart") {
+                        span_fav.classList.add("fas", "fa-heart");
+                    }
+                    else{
+                        span_fav.classList.add("far", "fa-heart");
+                    }
+                    
                 });
 
-                let icon_fav = document.createElement("i");
-                icon_fav.classList.add("far", "fa-heart");
-
-                span_fav.appendChild(icon_fav);
                 div_fav.appendChild(span_fav);
                 div_image.appendChild(img);
                 row.appendChild(div_image);
