@@ -73,9 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-document.getElementById('button').addEventListener("click", function() {
-    alert("You clicked");
- }​);​
 
 /*let div_main = document.getElementById("main");
 
