@@ -32,9 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 div_fav.classList.add("p-1");
 
                 let span_fav = document.createElement("input");
-                span_fav.addEventListener("click", function() {
-                    alert("You clicked me");
-                 }​);​
                 span_fav.id = "button"+i;
                 span_fav.type = "submit";
                 span_fav.classList.add("fav-icon");
