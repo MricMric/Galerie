@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("offline");
         }
 
-        document.getElementById('button').addEventListener("click", function() {
+        window.getElementById('button').addEventListener("click", function() {
             alert("You clicked me");
          }​);​
     
