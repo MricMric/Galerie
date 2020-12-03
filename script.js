@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 let div_fav = document.createElement("div");
                 div_fav.classList.add("p-1");
 
-                let span_fav = document.createElement("button");
-                span_fav.id = "test";
+                let span_fav = document.createElement("input");
+                span_fav.id = "button";
+                span_fav.type = "submit";
                 span_fav.classList.add("fav-icon");
 
                 let icon_fav = document.createElement("i");
@@ -58,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("offline");
         }
 
-        if(document.getElementById('test').clicked == true){
+        if(document.getElementById('button').clicked == true){
 
             alert("button was clicked");
         }
