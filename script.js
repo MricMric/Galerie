@@ -60,6 +60,8 @@ function displayImages(images) {
                 span_fav.addEventListener("click", function () {
 
                 let photoId = i;
+                let added = false;
+                
                     if (this.getAttribute("class") === "far fa-heart") {
                         
                             fetch("http://localhost:3000/favoris", {
