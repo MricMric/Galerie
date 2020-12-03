@@ -59,17 +59,23 @@ function displayImages(images) {
                 span_fav.classList.add("far", "fa-heart");
                 span_fav.addEventListener("click", function () {
 
+                let photoId = i;
                     if (this.getAttribute("class") === "far fa-heart") {
-                        document.addEventListener("DOMContentLoaded", function () {
-                            fetch("http://localhost:3000/")
-                                .then(function (response2) {
-                                    return response2.json();
                         
-                                }).then(function (res2) {
-                                    console.log(res2);
-                                });
-                          
-                        });        
+                            fetch("http://localhost:3000/favoris", {
+                                method: 'POST',
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({photoId}),
+                            }).then(res => {
+                                return res.json();
+                            }).then(data => {
+                                favs = data;
+                                let message = added ? "Favori ajouté" : "Favori enlevé";
+                                sendNotif(message)
+                            }) 
 
                         this.setAttribute("class", "fas fa-heart");
 
@@ -88,6 +94,20 @@ function displayImages(images) {
 
             container.appendChild(row);
             div_main.appendChild(container);
+}
+
+function sendNotif(message) {
+    if ('Notification' in window) {
+        if (Notification.permission === "granted") {
+            const notification = new Notification(message)
+        } else if (Notification.requestPermission !== "denied"){
+            Notification.requestPermission(permission => {
+                if (permission === "granted") {
+                    const notification = new Notification(message);
+                }
+            });
+        }
+    }
 }
 
 /*document.addEventListener("DOMContentLoaded", function () {
