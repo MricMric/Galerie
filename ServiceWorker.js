@@ -2,10 +2,15 @@ const cacheName = "Gallerie";
 
 const files = [
     "/",
+    "/script.js",
+    "https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.css",
     "style.css",
     "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap",
-    "script.js",
+    "https://bulma.io/images/placeholders/1280x960.png",
+    "https://bulma.io/images/placeholders/96x96.png",
+    "https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js",
     "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
 ];
 
 
