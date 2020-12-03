@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 div_fav.classList.add("p-1");
 
                 let span_fav = document.createElement("button");
+                span_fav.id = "test";
                 span_fav.classList.add("fav-icon");
 
                 let icon_fav = document.createElement("i");
@@ -40,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 span_fav.appendChild(icon_fav);
                 div_fav.appendChild(span_fav);
                 div_image.appendChild(img);
-                //div_image.appendChild(div_fav);
                 row.appendChild(div_image);
                 row.appendChild(div_fav);
             });
@@ -56,6 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("online");
         } else {
             console.log("offline");
+        }
+
+        if(document.getElementById('test').clicked == true){
+
+            alert("button was clicked");
         }
     
         window.addEventListener("online", function (e) {
