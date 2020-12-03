@@ -80,4 +80,18 @@ app.get('/favoris', (req, res) => {
     res.send(fav);
 })
 
-app.listen(port)
+app.post("/favoris", (request, response) => {
+    console.log(request.body);
+
+    if (favoris.includes(request.body.photoId)) {
+        favoris = favoris.filter(item => item !== request.body.photoId);
+    } else {
+        favoris.push(request.body.photoId);
+    }
+
+    response.send(favoris);
+});
+
+app.listen(port, err => {
+    console.log(`server is listening on ${port}`);
+});
