@@ -37,6 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 span_fav.addEventListener("click", function () {
 
                     if (this.getAttribute("class") === "far fa-heart") {
+                        document.addEventListener("DOMContentLoaded", function () {
+                            fetch("http://localhost:3000/")
+                                .then(function (response2) {
+                                    return response2.json();
+                        
+                                }).then(function (res2) {
+                                    console.log(res2);
+                                });
+                          
+                        });        
 
                         this.setAttribute("class", "fas fa-heart");
 
