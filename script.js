@@ -59,10 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("offline");
         }
 
-        if(document.getElementById('button').clicked == true){
-
-            alert("button was clicked");
-        }
+        document.getElementById('button').addEventListener("click", function() {
+            alert("You clicked me");
+         }​);​
     
         window.addEventListener("online", function (e) {
             console.log("change online");
@@ -74,7 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
+document.getElementById('button').addEventListener("click", function() {
+    alert("You clicked");
+ }​);​
 
 /*let div_main = document.getElementById("main");
 
