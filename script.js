@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let row = document.createElement("div");
             row.classList.add("row");
 
-            images.forEach(function (image) {
+            images.forEach(function (image, i) {
                 let div_image = document.createElement("div");
                 div_image.classList.add("col-sm-6", "col-md-4", "col-lg-3", "p-2");
 
@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 let div_fav = document.createElement("div");
                 div_fav.classList.add("p-1");
 
-                let span_fav = document.createElement("input");
-                span_fav.id = "button";
+                var span_fav = document.createElement("input");
+                span_fav.addEventListener("click", check);
+                span_fav.id = "button"+i;
                 span_fav.type = "submit";
                 span_fav.classList.add("fav-icon");
 
@@ -59,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("offline");
         }
 
+        function check(){ 
+            console.log("testtt");
+        };​
     
         window.addEventListener("online", function (e) {
             console.log("change online");
