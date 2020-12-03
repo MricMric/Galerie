@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 let span_fav = document.createElement("button");
                 span_fav.id = "button"+i;
-                icon_fav.classList.add("far", "fa-heart");
+                span_fav.classList.add("far", "fa-heart");
                 span_fav.addEventListener("click", function () {
                     console.log(this.id + " est clické");
-                    icon_fav.classList.add("fas", "fa-heart");
+                    span_fav.classList.add("fas", "fa-heart");
                 });
 
                 let icon_fav = document.createElement("i");
