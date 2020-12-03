@@ -83,13 +83,13 @@ app.get('/favoris', (req, res) => {
 app.post("/favoris", (request, response) => {
     console.log(request.body);
 
-    if (favoris.includes(request.body.photoId)) {
-        favoris = favoris.filter(item => item !== request.body.photoId);
+    if (fav.includes(request.body.photoId)) {
+        fav = fav.filter(item => item !== request.body.photoId);
     } else {
-        favoris.push(request.body.photoId);
+        fav.push(request.body.photoId);
     }
 
-    response.send(favoris);
+    response.send(fav);
 });
 
 app.listen(port, err => {
