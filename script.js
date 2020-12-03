@@ -36,10 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 span_fav.classList.add("far", "fa-heart");
                 span_fav.addEventListener("click", function () {
 
-                    if (span_fav.classList == "far fa-heart") {
+                    if (span_fav.classList == "far") {
+                        span_fav.classList.remove("far", "fa-heart");
                         span_fav.classList.add("fas", "fa-heart");
                     }
                     else{
+                        span_fav.classList.remove("fas", "fa-heart");
                         span_fav.classList.add("far", "fa-heart");
                     }
                     
