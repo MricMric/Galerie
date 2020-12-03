@@ -40,9 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 span_fav.appendChild(icon_fav);
                 div_fav.appendChild(span_fav);
                 div_image.appendChild(img);
-                //div_image.appendChild(div_fav);
+                div_image.appendChild(div_fav);
                 row.appendChild(div_image);
-                row.appendChild(div_fav);
             });
 
             container.appendChild(row);
