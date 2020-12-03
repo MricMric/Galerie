@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 span_fav.classList.add("fav-icon");
 
                 let icon_fav = document.createElement("i");
-                icon_fav.classList.add("far", "fa-hearth");
+                icon_fav.classList.add("far", "fa-heart");
 
                 span_fav.appendChild(icon_fav);
                 div_fav.appendChild(span_fav);
