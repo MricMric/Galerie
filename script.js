@@ -34,14 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 let span_fav = document.createElement("span");
                 span_fav.classList.add("fav-icon");
 
-                let icon_fav = document.createElement("i");
+                let icon_fav = document.createElement("button");
                 icon_fav.classList.add("far", "fa-heart");
 
                 span_fav.appendChild(icon_fav);
                 div_fav.appendChild(span_fav);
                 div_image.appendChild(img);
-                div_image.appendChild(div_fav);
+                //div_image.appendChild(div_fav);
                 row.appendChild(div_image);
+                row.appendChild(div_fav);
             });
 
             container.appendChild(row);
