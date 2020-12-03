@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 let div_fav = document.createElement("div");
                 div_fav.classList.add("p-1");
 
-                let span_fav = document.createElement("span");
+                let span_fav = document.createElement("button");
                 span_fav.classList.add("fav-icon");
 
-                let icon_fav = document.createElement("button");
+                let icon_fav = document.createElement("i");
                 icon_fav.classList.add("far", "fa-heart");
 
                 span_fav.appendChild(icon_fav);
