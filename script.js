@@ -59,9 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("offline");
         }
 
-        window.getElementById('button').addEventListener("click", function() {
-            alert("You clicked me");
-         }​);​
     
         window.addEventListener("online", function (e) {
             console.log("change online");
